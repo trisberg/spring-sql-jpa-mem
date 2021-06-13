@@ -1,0 +1,49 @@
+accelerator:
+  displayName: Spring Boot JPA
+  description: Spring Boot application that accesses an SQL database using JPA.
+  iconUrl: https://raw.githubusercontent.com/simple-starters/icons/master/icon-data.png
+  tags:
+    - Java
+    - Spring
+    - JPA
+    - SQL
+
+engineV2:
+  type: Merge
+  sources:
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ "**" ]
+        - type: Exclude
+          patterns: [ "accelerator.yaml", "pom.xml", "kubernetes/*.yaml", "skaffold.yaml" ]
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ "kubernetes/*.yaml" ]
+        - type: UseEncoding
+          encoding: UTF-8
+        - type: ReplaceText
+          substitutions:
+            - text: spring-sql-jpa
+              with: "#artifactId"
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ "skaffold.yaml" ]
+        - type: UseEncoding
+          encoding: UTF-8
+        - type: ReplaceText
+          substitutions:
+            - text: spring-sql-jpa
+              with: "#artifactId"
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ "pom.xml" ]
+        - type: UseEncoding
+          encoding: UTF-8
+        - type: ReplaceText
+          substitutions:
+            - text: spring-sql-jpa
+              with: "#artifactId"

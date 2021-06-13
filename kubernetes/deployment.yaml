@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: spring-sql-jpa
+  name: spring-sql-jpa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: spring-sql-jpa
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: spring-sql-jpa
+    spec:
+      containers:
+      - image: spring-sql-jpa:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: kubernetes
+        livenessProbe:
+          initialDelaySeconds: 10
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8080
+        name: app
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          initialDelaySeconds: 5
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8080
+        volumeMounts:
+          - name: database
+            mountPath: /workspace/config
+            readOnly: true
+      volumes:
+        - name: database
+          secret:
+            secretName: mariadb
+            items:
+            - key: mariadb-password
+              path: spring.datasource.password

@@ -1,0 +1,41 @@
+apiVersion: skaffold/v2beta15
+kind: Config
+metadata:
+  name: spring-sql-jpa
+profiles:
+- name: app
+  build:
+    tagPolicy:
+      sha256: {}
+    artifacts:
+    - image: spring-sql-jpa
+      custom:
+        buildCommand: ./mvnw spring-boot:build-image -DskipTests -Dspring-boot.build-image.imageName=$IMAGE
+        dependencies:
+          paths:
+            - src
+            - pom.xml
+  deploy:
+    kubectl:
+      manifests:
+      - kubernetes/deployment.yaml
+      - kubernetes/service.yaml
+  portForward:
+    - resourceType: service
+      resourceName: spring-sql-jpa
+      port: 80
+      localPort: 8080
+- name: local
+  build:
+    local:
+      push: false
+- name: db
+  deploy:
+    helm:
+      releases:
+      - name: mariadb
+        remoteChart:
+          bitnami/mariadb
+        setValues:
+          auth.username: tanzu
+          auth.database: test
