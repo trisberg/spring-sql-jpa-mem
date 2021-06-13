@@ -25,7 +25,7 @@ To start the application locally with an embedded database run:
 ./mvnw spring-boot:run
 ```
 
-See [Accessing the app](accessing-the-app) for commands to test the app.
+See [Accessing the app](#accessing-the-app) for commands to test the app.
 
 ## Building and deploying to a Kubernetes cluster
 
@@ -53,7 +53,7 @@ Now we can deploy the database setting a username and database name that we can 
 To deploy the MariaDB database run:
 
 ```
-helm install mariadb bitnami/mariadb --set auth.username=tanzu --set auth.database=test
+skaffold run -p db
 ```
 
 To delete the database after undeploying the app run:
@@ -84,7 +84,7 @@ skaffold run -p app,local --default-repo dev.local --port-forward
 
 > This will port-forward to a local 8080 port so you can access the app's endpoints.
 
-See [Accessing the app](accessing-the-app) for commands to test the app.
+See [Accessing the app](#accessing-the-app) for commands to test the app.
 
 ### Using a remote Kubernetes cluster
 
@@ -108,7 +108,7 @@ skaffold run -p app --default-repo $REPO_PREFIX --port-forward
 
 > This will port-forward to a local 8080 port so you can access the app's endpoints.
 
-See [Accessing the app](accessing-the-app) for commands to test the app.
+See [Accessing the app](#accessing-the-app) for commands to test the app.
 
 ### Undeploying the app
 
