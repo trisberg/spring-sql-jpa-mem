@@ -8,7 +8,7 @@ accelerator:
     - JPA
     - SQL
 
-engineV2:
+engine:
   sources:
   - includes: [ "**" ]
   - includes: [ "kubernetes/*.yaml", "skaffold.yaml", "pom.xml" ]
