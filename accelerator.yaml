@@ -9,10 +9,10 @@ accelerator:
     - SQL
 
 engine:
-  sources:
-  - includes: [ "**" ]
-  - includes: [ "kubernetes/*.yaml", "skaffold.yaml", "pom.xml" ]
-    transformations:
+  merge:
+  - include: [ "**" ]
+  - include: [ "kubernetes/*.yaml", "skaffold.yaml", "pom.xml" ]
+    chain:
     - type: ReplaceText
       substitutions:
       - text: spring-sql-jpa
