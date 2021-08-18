@@ -1,7 +1,7 @@
 accelerator:
   displayName: Spring Boot JPA
   description: Spring Boot application that accesses an SQL database using JPA.
-  iconUrl: https://raw.githubusercontent.com/simple-starters/icons/master/icon-data.png
+  iconUrl: https://raw.githubusercontent.com/sample-accelerators/icons/master/icon-data.png
   tags:
     - Java
     - Spring
