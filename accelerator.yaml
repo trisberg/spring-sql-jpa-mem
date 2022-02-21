@@ -1,5 +1,5 @@
 accelerator:
-  displayName: CVS Spring Boot SQL JPA
+  displayName: CVS Spring Boot SQL
   description: Spring Boot application that accesses an SQL database using JPA. Option to include service binding to PosgreSQL database.
   iconUrl: https://github.com/jmconelogin/spring-sql-jpa-cvs/blob/main/logo-edds-red.753d123a.svg
   tags:
