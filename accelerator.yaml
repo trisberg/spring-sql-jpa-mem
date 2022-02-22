@@ -1,7 +1,7 @@
 accelerator:
   displayName: CVS Spring Boot SQL Azure App-Service
   description: Spring Boot application that accesses an SQL database. Option to include service binding to PosgreSQL database.
-  iconUrl: https://github.com/jmconelogin/spring-sql-jpa-cvs/blob/main/logo-edds-red.753d123a.svg
+  iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/custom_logoImageFile.png
   tags:
     - java
     - spring
