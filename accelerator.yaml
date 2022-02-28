@@ -7,6 +7,8 @@ accelerator:
     - spring
     - jpa
     - sql
+    - retail
+    - PBM
 
   # options for the UI
   options:
