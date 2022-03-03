@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring-sql-jpa</artifactId>
+	<artifactId>java-spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-sql-jpa</name>
+	<name>java-spring-boot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -26,6 +26,13 @@
 	</licenses>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.cvs.notification</groupId>
+			<artifactId>cvs-notification-client</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<systemPath>${pom.basedir}/src/main/resources/cvs-notification-client-0.0.1-SNAPSHOT.jar</systemPath>
+			<scope>system</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
