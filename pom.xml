@@ -26,13 +26,13 @@
 	</licenses>
 
 	<dependencies>
-		<dependency>
+		<!--<dependency>
 			<groupId>com.cvs.notification</groupId>
 			<artifactId>cvs-notification-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<systemPath>${pom.basedir}/src/main/resources/cvs-notification-client-0.0.1-SNAPSHOT.jar</systemPath>
+			<systemPath>${basedir}/src/main/resources/cvs-notification-client-0.0.1-SNAPSHOT.jar</systemPath>
 			<scope>system</scope>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
