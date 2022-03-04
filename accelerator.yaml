@@ -1,5 +1,5 @@
 accelerator:
-  displayName: CVS Java App-Service
+  displayName: Test Java App-Service
   description: Spring Boot application that accesses an SQL database. Option to include service binding to PosgreSQL database.
   iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/custom_logo.png?raw=true
   tags:
